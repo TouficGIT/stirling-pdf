@@ -13,7 +13,7 @@ services:
       - traefik_proxy
     labels:
       - traefik.enable=true
-      - traefik.http.routers.stirling.middlewares=crowdsec-bouncer@file
+      - traefik.http.routers.stirling.middlewares=authentik@file,crowdsec-bouncer@file
       - traefik.http.routers.stirling.rule=Host(`pdf.home.emeffe.com`)
       - traefik.http.routers.stirling.entrypoints=websecure
       - traefik.http.routers.stirling.tls=true
