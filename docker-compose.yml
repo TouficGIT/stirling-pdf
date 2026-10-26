@@ -1,6 +1,6 @@
 services:
   stirling-pdf:
-    image: stirlingtools/stirling-pdf:2.10.0
+    image: stirlingtools/stirling-pdf:2.14.3
     container_name: stirling-pdf
     restart: unless-stopped
     volumes:
@@ -20,7 +20,6 @@ services:
       - traefik.http.routers.stirling.tls.certresolver=cloudflare
       - traefik.http.services.stirling.loadbalancer.server.port=8080
       - traefik.docker.network=traefik_proxy
-
 networks:
   traefik_proxy:
     external: true
